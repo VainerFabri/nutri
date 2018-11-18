@@ -18,18 +18,21 @@ for(var i=0; i<pacientes.length; i++){
     var pesoValido = true;
     var alturaValida = true;
 
-if(peso <= 0 || peso >= 300){
-    tdImc.textContent = "Peso inválido!";
-    pesoValido = false;
-}
+    if(peso <= 0 || peso >= 300){
+        tdImc.textContent = "Peso inválido!";
+        pesoValido = false;
+        paciente.classList.add("paciente-invalido");
+    }
 
-if(altura <= 0 || altura >= 3.00){
-    tdImc.textContent = "Altura inválida!";
-    alturaValida = false;
-}
+    if(altura <= 0 || altura >= 3.00){
+        tdImc.textContent = "Altura inválida!";
+        alturaValida = false;
+        paciente.classList.add("paciente-invalido");
+    }
 
-if(pesoValido && alturaValida){
-    var imc = peso / (altura * altura);
-    tdImc.textContent = imc.toFixed(2);
-}
+    if(pesoValido && alturaValida){
+        var imc = peso / (altura * altura);
+        tdImc.textContent = imc.toFixed(2);
+        paciente.classList.add("paciente-valido");
+    }
 }
