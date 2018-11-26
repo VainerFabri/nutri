@@ -23,11 +23,15 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
         tabela.appendChild(pacienteTr);
         
         form.reset();
+        var msgErro = document.querySelector("#mensagem-erro");
+        msgErro.innerHTML = "";
         
     });
 
     function exibeErro(erros){
         var ul = document.querySelector("#mensagem-erro");
+
+        ul.innerHTML = "";
         
         erros.forEach(function(erro){
             var li = document.createElement("li");
@@ -52,6 +56,7 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
     function montaTr(paciente){
         var pacienteTr = document.createElement("tr");
         pacienteTr.classList.add("paciente");
+        pacienteTr.classList.add("paciente-valido");
 
         pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
         pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
@@ -78,6 +83,14 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
         if(!validaPeso(paciente.peso)) erros.push("Peso inválido*");
 
         if(!validaAltura(paciente.altura)) erros.push("Altura inválida*");
+
+        if(paciente.nome.length == 0) erros.push("Campo nome obrigatório!");
+
+        if(paciente.gordura.length == 0) erros.push("Campo gordura obrigatório!")
+
+        if(paciente.peso.length == 0) erros.push("Campo peso obrigatório!");
+
+        if(paciente.altura.length == 0) erros.push("Campo altura obrigatório!");
 
         return erros;
     }
