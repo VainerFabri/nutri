@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Aparecida Nutrição</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 
@@ -72,32 +73,51 @@
 
 			</section>
 		</main>
-
+		<!--Colapse Button-->
+		<div class="row-lg-12" align="center">
+			<div class="col-md-12">
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-colapse" aria-expanded="false" aria-controls="collapseExample">
+					Adicionar novo paciente
+				  </button>
+			</div>
+		</div>
+		<!--Fim Colapse-->
 		<!-- ... -->
-	<section class="container">
-		<h2 id="titulo-form">Adicionar novo paciente</h2>
-		<form id="form-adiciona">
-			<div class="grupo">
-				<label for="nome">Nome:</label>
-				<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
+		<div class="collapse mt-2" id="form-colapse">
+			<div class="card card-body">
+				<section class="container">
+					<h2 id="titulo-form">Adicionar novo paciente</h2>
+					<ul id="mensagem-erro">
+						<li></li>
+					</ul>
+					<form id="form-adiciona">
+						<div class="grupo">
+							<label for="nome">Nome:</label>
+							<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="form-control">
+						</div>
+						<div class="grupo">
+							<label for="peso">Peso:</label>
+							<input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="form-control">
+						</div>
+						<div class="grupo">
+							<label for="altura">Altura:</label>
+							<input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="form-control">
+						</div>
+						<div class="grupo">
+							<label for="gordura">% de Gordura:</label>
+							<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="form-control">
+						</div>
+			
+						<button id="adicionar-paciente" class="btn btn-success">Adicionar</button>
+					</form>
+				</section>
 			</div>
-			<div class="grupo">
-				<label for="peso">Peso:</label>
-				<input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="campo campo-medio">
-			</div>
-			<div class="grupo">
-				<label for="altura">Altura:</label>
-				<input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="campo campo-medio">
-			</div>
-			<div class="grupo">
-				<label for="gordura">% de Gordura:</label>
-				<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
-			</div>
-
-			<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
-		</form>
-	</section>
+		</div>
+	
 		<script src="js/calcula-imc.js" ></script>
-		<script src="js/form.js" ></script>>
+		<script src="js/form.js" ></script>
 	</body>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </html>
