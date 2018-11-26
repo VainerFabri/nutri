@@ -1,124 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<title>Aparecida Nutrição</title>
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
 
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<title>Aparecida Nutrição</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 
-		<header>
-			<div class="container">
-				<h1 class="titulo">Aparecida Nutrição</h1>
+</head>
+
+<body>
+
+	<header>
+		<div class="container">
+			<h1 class="titulo">Aparecida Nutrição</h1>
+		</div>
+	</header>
+	<main>
+		<section class="container">
+			<h2>Meus pacientes</h2>
+			<div class="row-md-12 mb-1">
+				<div class="col-md-4">
+					<input type="text" name="filtro" id="filtrar-tabela" placeholder="filtrar" class="form-control">
+				</div>
 			</div>
-		</header>
-		<main>
+
+			<div class="row-md-12">
+				<div class="col-md-12">
+					<table>
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Peso(kg)</th>
+								<th>Altura(m)</th>
+								<th>Gordura Corporal(%)</th>
+								<th>IMC</th>
+							</tr>
+						</thead>
+
+						<tbody id="tabela-pacientes">
+							<tr class="paciente">
+								<td class="info-nome">Paulo</td>
+								<td class="info-peso">100</td>
+								<td class="info-altura">22.00</td>
+								<td class="info-gordura">10</td>
+								<td class="info-imc">0</td>
+							</tr>
+
+							<tr class="paciente">
+								<td class="info-nome">João</td>
+								<td class="info-peso">80</td>
+								<td class="info-altura">1.72</td>
+								<td class="info-gordura">40</td>
+								<td class="info-imc">0</td>
+							</tr>
+
+							<tr class="paciente">
+								<td class="info-nome">Erica</td>
+								<td class="info-peso">54</td>
+								<td class="info-altura">1.64</td>
+								<td class="info-gordura">14</td>
+								<td class="info-imc">0</td>
+							</tr>
+
+							<tr class="paciente">
+								<td class="info-nome">Douglas</td>
+								<td class="info-peso">85</td>
+								<td class="info-altura">1.73</td>
+								<td class="info-gordura">24</td>
+								<td class="info-imc">0</td>
+							</tr>
+							<tr class="paciente">
+								<td class="info-nome">Tatiana</td>
+								<td class="info-peso">466</td>
+								<td class="info-altura">1.55</td>
+								<td class="info-gordura">19</td>
+								<td class="info-imc">0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!--Colapse Button-->
+	<div class="row-lg-12" align="center">
+		<div class="col-md-12">
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-colapse" aria-expanded="false"
+			 aria-controls="collapseExample">
+				Adicionar novo paciente
+			</button>
+		</div>
+	</div>
+	<!--Fim Colapse-->
+	<!-- ... -->
+	<div class="collapse mt-2" id="form-colapse">
+		<div class="card card-body">
 			<section class="container">
-				<h2>Meus pacientes</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Nome</th>
-							<th>Peso(kg)</th>
-							<th>Altura(m)</th>
-							<th>Gordura Corporal(%)</th>
-							<th>IMC</th>
-						</tr>
-					</thead>
-					<tbody id="tabela-pacientes">
-						<tr class="paciente" >
-							<td class="info-nome">Paulo</td>
-							<td class="info-peso">100</td>
-							<td class="info-altura">22.00</td>
-							<td class="info-gordura">10</td>
-							<td class="info-imc">0</td>
-						</tr>
+				<h2 id="titulo-form">Adicionar novo paciente</h2>
+				<ul id="mensagem-erro">
+					<li></li>
+				</ul>
+				<form id="form-adiciona">
+					<div class="grupo">
+						<label for="nome">Nome:</label>
+						<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="form-control">
+					</div>
+					<div class="grupo">
+						<label for="peso">Peso:</label>
+						<input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="form-control">
+					</div>
+					<div class="grupo">
+						<label for="altura">Altura:</label>
+						<input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="form-control">
+					</div>
+					<div class="grupo">
+						<label for="gordura">% de Gordura:</label>
+						<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="form-control">
+					</div>
 
-						<tr class="paciente" >
-							<td class="info-nome">João</td>
-							<td class="info-peso">80</td>
-							<td class="info-altura">1.72</td>
-							<td class="info-gordura">40</td>
-							<td class="info-imc">0</td>
-						</tr>
-
-						<tr class="paciente" >
-							<td class="info-nome">Erica</td>
-							<td class="info-peso">54</td>
-							<td class="info-altura">1.64</td>
-							<td class="info-gordura">14</td>
-							<td class="info-imc">0</td>
-						</tr>
-
-						<tr class="paciente">
-							<td class="info-nome">Douglas</td>
-							<td class="info-peso">85</td>
-							<td class="info-altura">1.73</td>
-							<td class="info-gordura">24</td>
-							<td class="info-imc">0</td>
-						</tr>
-						<tr class="paciente" >
-							<td class="info-nome">Tatiana</td>
-							<td class="info-peso">466</td>
-							<td class="info-altura">1.55</td>
-							<td class="info-gordura">19</td>
-							<td class="info-imc">0</td>
-						</tr>
-					</tbody>
-				</table>
-
+					<button id="adicionar-paciente" class="btn btn-success">Adicionar</button>
+				</form>
 			</section>
-		</main>
-		<!--Colapse Button-->
-		<div class="row-lg-12" align="center">
-			<div class="col-md-12">
-				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form-colapse" aria-expanded="false" aria-controls="collapseExample">
-					Adicionar novo paciente
-				  </button>
-			</div>
 		</div>
-		<!--Fim Colapse-->
-		<!-- ... -->
-		<div class="collapse mt-2" id="form-colapse">
-			<div class="card card-body">
-				<section class="container">
-					<h2 id="titulo-form">Adicionar novo paciente</h2>
-					<ul id="mensagem-erro">
-						<li></li>
-					</ul>
-					<form id="form-adiciona">
-						<div class="grupo">
-							<label for="nome">Nome:</label>
-							<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="form-control">
-						</div>
-						<div class="grupo">
-							<label for="peso">Peso:</label>
-							<input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="form-control">
-						</div>
-						<div class="grupo">
-							<label for="altura">Altura:</label>
-							<input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="form-control">
-						</div>
-						<div class="grupo">
-							<label for="gordura">% de Gordura:</label>
-							<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="form-control">
-						</div>
-			
-						<button id="adicionar-paciente" class="btn btn-success">Adicionar</button>
-					</form>
-				</section>
-			</div>
-		</div>
-	
-		<script src="js/calcula-imc.js" ></script>
-		<script src="js/form.js" ></script>
-		<script src="js/remover-paciente.js"></script>
-	</body>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</div>
+
+	<script src="js/calcula-imc.js"></script>
+	<script src="js/form.js"></script>
+	<script src="js/remover-paciente.js"></script>
+	<script src="js/filtra.js"></script>
+</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+
 </html>
